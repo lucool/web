@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		
+		<div id="box1">1111</div>
+		<div id="box2">2222</div>
+		
+		<script>
+			/*
+			 * 使用新的标签对象将匹配到的旧的标签对象全部替换掉
+			 * 
+			 * old标签对象.replaceWith(new标签对象)
+			 * 
+			 * new标签对象.replaceAll(old标签对象)
+			 */
+			
+			$("#box1").replaceWith("<div>hello</div>");
+			$("<div>abcd</div>").replaceAll("#box2");
+			
+		</script>
+		
+	</body>
+</html>

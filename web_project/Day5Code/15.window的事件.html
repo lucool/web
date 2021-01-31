@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				height: 5000px;
+			}
+			
+			button{
+				position: fixed;
+				left:50px;
+				bottom: 50px;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<button onclick="gotop();">回到顶部</button>
+		<script>
+			
+			//1.load事件
+			/*alert("1111");
+			
+			
+			//load是window的一个事件，当html中的所有内容全部加载完毕之后自动执行该事件对应的函数
+			//不管该函数书写在当前html文件中的哪个位置，都是最后执行
+			window.onload  = function(){
+				alert("hello");
+			}
+			
+			
+			alert("22222");*/
+			
+			
+			//2.scroll事件:当页面的滑动条进行滑动的时候，该事件对应的函数会被自动执行
+			window.onscroll = function(){
+				var top = document.documentElement.scrollTop || document.body.scrollTop;
+				console.log(top);
+			}
+			
+			//返回顶部
+			function gotop(){
+				document.documentElement.scrollTop = 0;
+				document.body.scrollTop = 0;
+				
+			}
+			
+		</script>
+	</body>
+</html>

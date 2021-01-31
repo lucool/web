@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		
+		<button id="btn">点击</button>
+		
+		<div id="box">
+			<p>第一个p标签</p>
+			<p>第二个p标签</p>
+			<p>第三个p标签</p>
+			<p>第四个p标签</p>
+		</div>
+		
+		<script>
+			//事件的绑定函数：bind()    delegate()    on()    click/dblclick/mouseover()
+			
+			$(document).ready(function(){
+				//1.bind()
+				/*
+				 * bind(type,fn)
+				 *    type:事件类型，比如：click/dblclick/mouseover等
+				 *    fn:当事件触发的时候需要执行的函数，一般使用匿名函数
+				 */
+				//需求1：点击按钮，给div添加一个子标签p
+				/*$("#btn").bind("click",function(){
+					$("#box").append("<p>hello</p>");
+				});*/
+				
+				//需求2：点击已有的p标签，给div添加一个子标签p
+				/*$("#box p").bind("click",function(){
+					$("#box").append("<p>hello</p>");
+				});
+				*/
+				/*
+				 * 问题：【极端的问题】
+				 * 	1.$("#box p").bind其中使用了隐式迭代的方法，如果匹配到的元素特别多的情况下，
+				 *     对于大量元素来说，需要给每个元素绑定事件，则会影响性能
+				 *  2.对于新添加的元素，无法绑定事件【点击新增的p标签，无法响应的函数】
+				 */
+				
+				//2.delegate()
+				/*
+				 * 使用delegate函数可以解决bind的缺点
+				 * 
+				 * 事件代理，也被称为事件委托，利用事件冒泡给父元素添加事件处理程序，从而使得子元素也可以响应该事件
+				 * 
+				 * 优点：
+				 * 		a.减少DOM操作，提高交互效率
+				 * 		b.新添加的子元素也可以响应事件
+				 * 
+				 * 适用的事件类型【冒泡事件】：click,mousedown,mouseup,keydown,keypress,mousemove
+				 * 适用的场景：如果一个父元素存在大量的子元素，所有的子元素需要实现相同的效果，就可以考虑将事件绑定给父标签
+				 * 
+				 * 
+				 *  代理.delegate(委托，type，fn)
+				 * 
+				 * 注意：代理和委托都是指定标签的选择器
+				 * 
+				 * 代理：父标签div
+				 * 委托：p标签
+				 * 
+				 */
+				
+				//需求：点击已有的p标签，给div添加一个子标签p
+				/*$("#box").delegate("p","click",function(){
+					$("#box").append("<p>hello</p>");
+					
+					//注意：在一个事件的函数内部，是否要使用this取决于当前事件的触发对象
+					//$(this).append("<p>hello</p>");
+				});
+				*/
+				/*
+				 * 问题：
+				 * 		使用事件代理能够解决问题，但是，如果DOM树比较深的情况下，这样如果需要给嘴里层的标签添加事件，
+				 * 则一层一层向上冒泡还是会影响性能
+				 */
+				
+				//3.on()
+				/*
+				 * 代理.on(type,委托，fn)
+				 */
+				//需求：点击已有的p标签，给div添加一个子标签p
+				/*$("#box").on("click","p",function(){
+					$("#box").append("<p>hello</p>");
+				});*/
+				
+				
+				//4.click()
+				/*
+				 * click(fn)
+				 */
+				
+				//需求：点击按钮，给div添加一个子标签p
+				$("#btn").click(function(){
+					$("#box").append("<p>abc</p>");
+				});
+				
+				
+				/*
+				 * 总结：
+				 * 1.选择器匹配到的元素较多时，尽量不要使用bind，采用delegate或者on
+				 *
+				 * 2.dom树比较深，尽量不要使用deleate，采用on
+				 * 
+				 * 3.一般情况下，常用bind和click
+				 */
+				
+			});	
+		</script>
+		
+	</body>
+</html>

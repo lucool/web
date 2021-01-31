@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="p1" value="aaaa" class="cls1" name="n1"/>
+		<input type="text" id="p2" value="bbbb" class="cls1" name="n1"/>
+		<input type="text" id="p3" value="cccc" class="cls2" name="n1"/>
+		<input type="text" id="p4" value="dddd" class="cls3" name="n2"/>
+		<br />
+		
+		<div id="box" class="cls" name="n"></div>
+		
+		
+		<script>
+			/*
+			 * js操作html的步骤：
+			 * 		a.获取html标签对象
+			 * 		b.通过对象访问属性和调用函数
+			 */
+			
+			//1.getElementById("id属性的值")：通过id属性的值获取对应的标签对象,返回值为匹配到的标签的对象
+			//注意：如果通过id查找标签，id尽量唯一，如果不唯一，则该函数只返回匹配到的第一个标签对象
+			//在DOM中，默认提供一个对象document，表示整合html文档，使用document对象可以确定查找的范围
+			var obj1 = document.getElementById("p1");
+			document.write(typeof obj1);
+			document.write(obj1);  //[object HTMLInputElement]
+			
+			document.write("<br />");
+			
+			document.write(obj1.value);
+			document.write("<br />");
+			
+			/*
+			 * a.同一个id属性的值在同一个html页面中最好只出现一次，如果出现多次，则只匹配第一个
+			 * b.返回[object HTMLXxxxElement],HTMLXxxxElement表示类
+			 */
+			
+			
+			//2.getElementByTagName("html标签名称")：通过标签名称获取对应的所有标签对象,返回值为匹配到的所有标签的集合
+			var obj2 = document.getElementsByTagName("input");
+			document.write(typeof obj2);
+			document.write(obj2);    //[object HTMLCollection]
+			document.write("<br />");
+			
+			document.write(obj2.length);
+			
+			//获取每个标签对象的属性
+			for(var i =0;i < obj2.length;i++){
+				document.write(obj2[i].value + "<br />");
+			}
+			
+			/*
+			 * a.通过指定的标签名称查找到的标签至少有一个
+			 * b.返回[object HTMLCollection],HTMLCollection表示类
+			 * c.如果要获取每个具体的标签对象，则需要遍历【注意：当做数组操作】
+			 */
+			
+			//3.getElementByClassName("class属性的值")：通过class属性的值获取指定的标签对象，返回值为一个集合
+			var obj3 = document.getElementsByClassName("cls1");
+			document.write(typeof obj3);
+			document.write(obj3);    //[object HTMLCollection]
+			document.write("<br />"); 
+			
+			document.write(obj3.length);
+			document.write("<br />"); 
+			
+			//获取每个标签对象的属性
+			for(var i =0;i < obj3.length;i++){
+				document.write(obj3[i].value + "<br />");
+			}
+			
+			/*
+			 * a.通过指定的class属性的值查找到的标签至少有一个【同一个class可以作用于多个标签】
+			 * b.返回[object HTMLCollection],HTMLCollection表示类
+			 * c.如果要获取每个具体的标签对象，则需要遍历【注意：当做数组操作】
+			 */
+			
+			
+			//4.getElementByName("name属性的值"):通过nane属性的值获取指定的标签对象
+			var obj4 = document.getElementsByName("n1");
+			document.write(typeof obj4);
+			document.write(obj4);    //[object NodeList]
+			document.write("<br />"); 
+			
+			document.write(obj4.length);
+			document.write("<br />"); 
+			
+			//获取每个标签对象的属性
+			for(var i =0;i < obj4.length;i++){
+				document.write(obj4[i].value + "<br />");
+			}
+			
+			
+			/*
+			 * a.通过指定的name属性的值查找到的标签至少有一个【同一个name可以作用于多个标签】
+			 * b.返回[object NodeList],NodeList表示类
+			 * c.如果要获取每个具体的标签对象，则需要遍历【注意：当做数组操作】
+			 */
+			
+			
+			//5.如果在一个html页面中，某个标签只有一个，通过上述四种办法获取该变量对象，该怎么做？
+			var div1 = document.getElementById("box");
+			var div2 = document.getElementsByClassName("cls")[0];
+			var div3 = document.getElementsByTagName("div")[0];
+			var div4 = document.getElementsByName("n")[0];
+			
+			
+		</script>
+	</body>
+</html>

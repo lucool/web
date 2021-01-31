@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			#box{
+				width: 200px;
+				height: 200px;
+				background-color: cyan;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		
+		<div id="box"></div>
+		
+		<button id="btn1">显示</button>
+		<button id="btn2">隐藏</button>
+		<button id="btn3">切换可见状态</button>
+		<button id="btn4">淡入</button>
+		<button id="btn5">淡出</button>
+		<button id="btn6">滑入</button>
+		<button id="btn7">滑出</button>
+		
+		<script>
+			/*
+			 * 1.隐藏和显示
+			 * 		hide()
+			 * 		show()
+			 * 		toggle()
+			 * 
+			 * 2.淡入和淡出
+			 * 		fadeIn()
+			 * 		fadeOut()
+			 * 
+			 * 3.滑入和滑出
+			 * 		slideDown()
+			 * 		slideUp()
+			 * 
+			 * 
+			 * 用法：
+			 * 		xxxx(speed[,callback])
+			 * 	speed:表示动画执行的速度【时间】，可以使用数字表示，单位为毫秒，
+			 * 也可以使用英文单词表示【slow:600ms,normal:400ms,fast:200ms】
+			 * callback:回调函数，可以省略，表示当动画执行完毕之后需要进行的操作，可以使用匿名函数来执行某个操作
+			 * 		    注意：当动画执行完毕，回调函数会自动被执行
+			 */
+			
+			/*$("#btn1").bind("click",function(){
+				$("#box").show(1000);
+			});
+			$("#btn2").bind("click",function(){
+				$("#box").hide(1000);
+			});*/
+			
+			$("#btn1").bind("click",function(){
+				$("#box").show(1000,function(){
+					alert("显示动画执行完毕");
+					
+					//需求：动画执行完成之后，将div的背景色设置为红色
+					$(this).css("background-color","red");
+				});
+			});
+			$("#btn2").bind("click",function(){
+				$("#box").hide(1000,function(){
+					alert("隐藏动画执行完毕~~~~");
+				});
+			});
+			
+			
+			$("#btn3").bind("click",function(){
+				$("#box").toggle(1000);
+			});
+			
+			$("#btn4").bind("click",function(){
+				$("#box").fadeIn(1000);
+			});
+			
+			
+			$("#btn5").bind("click",function(){
+				$("#box").fadeOut(1000);
+			});
+			
+			
+			$("#btn6").bind("click",function(){
+				$("#box").slideDown(1000);
+			});
+			
+			$("#btn7").bind("click",function(){
+				$("#box").slideUp(1000);
+			});
+			
+		</script>
+	</body>
+</html>

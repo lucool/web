@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 100px;
+				height: 100px;
+				background-color: orange;
+				
+				position: absolute;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		
+		<script>
+			/*
+			 * 拖拽的条件
+			 * 1.按下鼠标：mousedown
+			 * 
+			 * 2.移动,给文档添加移动事件：mousemove
+			 * 		client -offset
+			 * 
+			 * 3.鼠标抬起：mouseup
+			 * 
+			 */
+			
+			window.onload = function(){
+				var box = document.getElementById("box");
+				
+				//1.给div添加按下事件
+				box.onmousedown = function(event){
+					var e = event || window.event
+					//记录鼠标按下位置的坐标【鼠标按下的位置相对于div的位置】
+					var offsetX = e.offsetX;
+					var offsetY = e.offsetY;
+					
+					
+					//2。移动必须在按下之后，移动事件和按下事件同时进行，在这个过程中，鼠标相对于div的位置保持不变，相对于document发生了改变
+					document.onmousemove = function(event){
+						var e = event || window.event
+						//获取停止移动的时候的鼠标坐标【鼠标按下的位置相对于浏览器可视区域的坐标】
+						var clientX = e.clientX;
+						var clientY = e.clientY;
+						
+						//设置div最终的位置
+						box.style.left = clientX - offsetX + "px";
+						box.style.top = clientY - offsetY + "px";
+						
+					}	
+				}
+				
+				//3.释放资源【当鼠标抬起的时候停止计算坐标】
+				box.onmouseup = function(){
+					document.onmousemove = null;
+				}
+			}
+			
+		</script>
+	</body>
+</html>

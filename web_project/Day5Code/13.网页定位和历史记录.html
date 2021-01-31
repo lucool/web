@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				background-color:red;
+			}
+		</style>
+	</head>
+	<body>
+		
+		<button onclick="func1();">跳转到蓝色页面</button>
+		<button onclick="func2();">加载绿色页面</button>
+		<button onclick="func3();">刷新当前页面</button>
+		
+		
+		<button onclick="next();">下一页</button>
+		<button onclick="goPage();">回到绿色页面</button>
+		
+		<script>
+			/*
+			 * window.location:
+			 * href属性：控制浏览器地址栏中的内容
+			 * reload():刷新页面
+			 * assign()：加载新的页面
+			 * replace()：新的页面代替旧的页面【注意：不会在历史记录中留下痕迹】
+			 */
+			
+			function func1(){
+				//跳转到指定页面，有回退按钮
+				window.location.href = "blueWindow.html";
+			}
+			
+			function func2(){
+				//跳转到指定页面，有回退按钮
+				window.location.assign("greenWindow.html");
+				//跳转到指定页面，但是没有回退按钮，相当于将原来的页面直接替换掉
+   				//window.location.replace("greenWindow.html");
+			}
+			
+			function func3(){
+				window.location.reload();
+			}
+			
+			
+			/*
+			 * 注意：window.history必须在右历史记录的前提下才能使用该对象中的属性或者函数
+			 * back()  上一页
+			 * forward()  下一页
+			 * go(num)  跳转到第几页
+			 */
+			
+			function next(){
+				window.history.forward();
+			}
+			
+			function goPage(){
+				//红----》蓝----》绿
+				//0 ----->1 ----->2
+				window.history.go(2);
+			}
+			
+		</script>
+	</body>
+</html>

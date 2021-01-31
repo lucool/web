@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			
+			//1.eval():可以识别字符串中的js代码
+			var s1 = "alert('哈哈哈哈哈哈哈')";
+			//document.write(s1);
+			
+			//eval(s1);
+			//document.write(s1);
+			
+		
+			//2.encodeURI/decodeURI：对字符进行编解码
+			//注意：主要针对的是中文
+			var s2 = "Python编程";
+			var r1 = encodeURI(s2);
+			document.write(r1);   //Python%E7%BC%96%E7%A8%8B
+			
+			
+			var s3 = "Python%E7%BC%96%E7%A8%8B";
+			var r2 = decodeURI(s3);
+			document.write(r2);
+			document.write("<br />");
+			
+			
+			//3.isNaN：判断是否是数字
+			//注意：是数字或者能转化为数字，则返回false
+			
+			//4.parseInt()/parseFloat()：类型转换
+			var str1 = "123";
+			var re1 = parseInt(str1);
+			document.write(typeof re1);
+			document.write("<br />");
+			document.write(re1);
+			document.write("<br />");
+			
+			
+			var str1 = "123.12";
+			var re1 = parseFloat(str1);
+			document.write(typeof re1);
+			document.write("<br />");
+			document.write(re1);
+			
+			
+			//int() float() str(123)
+			
+		</script>
+	</body>
+</html>

@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			.cls{
+				width: 100px;
+				height: 100px;
+				background-color: red;
+			}
+			
+			.change1{
+				font-size: 30px;
+			}
+			
+			.change2{
+				transform: rotate(30deg);
+			}
+			
+		</style>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		
+		<div class="cls">hello</div>
+		
+		<script>
+			/*
+			 * 原理：
+			 * 		同一个类选择器可以同时作用于多个标签
+			 *      多个类选择器可以同时作用于一个标签
+			 * 
+			 * addClass(class):为所有匹配到的元素添加指定的css的类名
+			 * removeClass(class):从所有匹配到的元素中删除全部或者指定的css类
+			 * toggleClass(class):如果class存在，则表示删除；如果不存在，则表示添加
+			 */
+			
+			//操作单个类
+			
+			/*$("div").addClass("change1");
+			$("div").addClass("change2");
+			
+			
+			$("div").removeClass("change1");*/
+			
+			
+			//如果不存在则添加
+			//$("div").toggleClass("change1");
+			
+			//如果存在则删除
+			//$("div").toggleClass("cls");
+			
+			
+			//操作多个类，类与类之间使用空格隔开
+			$("div").addClass("change1 change2");
+				
+		</script>
+		
+	</body>
+</html>

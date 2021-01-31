@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#msg_id{
+				width: 200px;
+				/*自适应*/
+				height: auto;
+				
+				/*初始状态下，该标签不需要显示*/
+				display: none;
+				
+				background-color: lightgray;
+				
+				border: 1px solid gray;
+				
+				/*定位属性*/
+				position: absolute;
+			}
+			
+			#box a{
+				margin: 30px;
+				/*注意：对一个行内标签设置宽高无效，同时设置内外边距也无效【但是，水平距离有效的】*/
+				display: inline-block;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<!--需求：当鼠标放到一个葫芦娃上的时候，会出现一个提示框，框内是关于该葫芦娃的简介
+			
+			当鼠标在葫芦娃的名字上左右上下移动时，显示简介的提示框也会随着移动
+		-->
+		<div id="box">
+			<a href="#">大娃（红娃）</a><br />
+			<a href="#">二娃（橙娃）</a><br />
+			<a href="#">三娃（黄娃）</a><br />
+			<a href="#">四娃（绿娃）</a><br />
+			<a href="#">五娃（青娃）</a><br />
+			<a href="#">六娃（蓝娃）</a><br />
+			<a href="#">七娃（紫娃）</a><br />
+			<a href="#">葫芦小金刚</a><br />
+			<!--显示葫芦娃的简介-->
+			<div id="msg_id"></div>
+		</div>
+		
+		<script>
+			window.onload = function(){
+				//葫芦娃简介
+				var arrMsg = ["力大无穷，巨大化。(弱点：比较鲁莽，不知随机应变)", 
+				"千里眼，顺风耳，灵活聪明，机敏过人，最善于谋划计策(弱点：攻击力与其兄弟相比较过于弱小了，眼睛和耳朵太脆弱)",
+				"铜头铁臂，钢筋铁骨，刀枪不入（弱点：第一部中根本就是没有弱点，但可以以柔克刚降服他。可是到了第二部就被强行加入了一个致命弱点：怕打屁股。性急骄傲）。",
+				"喷火，吸火，霹雳(弱点：受不了激将法，也怕冷)", "吸水，吐水，口吐闪电产生降雨(弱点：水火不相溶，意气用事。第一部中水娃的能力也是没有弱点的，不用吸水也能喷水喷得无穷无尽。到了第二部就变得需要先吸水才能吐水，水量有限。）",
+				"隐身术，透体术，来无影去无踪，聪明机灵，最善于偷盗和行动(弱点：太顽皮。在第一部里能够在被金蛇冰封的情况下透体而出，在第二部前半段能够使用透体术逃出鳄鱼头领爪子的紧紧捉拿，直到被捉的那一下透体术就使不出来了)", 
+				"最小，没多大本领，倍受哥哥们的关爱，有宝葫芦，可以吸入魔法、兵器和妖怪，在第一部刚出世时蒙蔽双眼，十分听从妖精的话，把六位哥哥吸进宝葫芦。(弱点:失去宝葫芦，到第二部中宝葫芦那么容易就碎了)",
+				"葫芦娃的合体，七颗葫芦娃的心都溶在他的胸中，七个葫芦娃的本领都长在他的身上，同时也具有七个葫芦娃的弱点。他大闹妖精洞府后，闯入十八层地道，毁掉青蛇精的两件宝物。后变成一座大山，镇压了青蛇精."];
+			
+				//获取标签对象
+				var box = document.getElementById("box");
+				var msgDiv = document.getElementById("msg_id");
+				var oas = box.getElementsByTagName("a");
+				
+				//遍历a集合，获取每个a对象
+				for(var i = 0;i < oas.length;i++){
+					//给每个a标签打一个标记，方便从集合中获取标签对象并设置属性
+					oas[i].index = i;
+					
+					//1.鼠标移入a标签的时候，颜色改为橙色，将指定的简介显示出来
+					oas[i].onmouseover  = function(){
+						//this可以获取当前鼠标移入的对象
+						this.style.color = "orange";
+						
+						//给div赋值
+						msgDiv.innerHTML = arrMsg[this.index];
+						
+						//div显示
+						msgDiv.style.display = "block";
+						
+					}
+					
+					//2.鼠标移出a标签的时候，颜色改为蓝色，将指定的简介隐藏
+					oas[i].onmouseout  = function(){
+						//this可以获取当前鼠标移入的对象
+						this.style.color = "blue";
+						
+						//div隐藏
+						msgDiv.style.display = "none";
+						
+					}
+					
+					//3.当鼠标在a标签上移动的时候，显示简介的div随着移动
+					oas[i].onmousemove = function(event){
+						var e = event || window.event;
+						
+						//e.clientX:获取鼠标在页面中的横坐标
+						//e.clientY：获取鼠标在页面中的纵坐标
+						
+						//div显示
+						msgDiv.style.display = "block";
+						
+						msgDiv.style.left = e.clientX + 10  + "px";
+						msgDiv.style.top = e.clientY - 5 +  "px";
+						
+					}	
+				}
+			}
+		</script>
+	</body>
+</html>

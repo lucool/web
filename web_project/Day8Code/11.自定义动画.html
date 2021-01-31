@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		
+		<button>开始动画</button>
+		
+		<p>hello</p>
+		
+		<div style="width: 100px;height: 200px; background: red;position:absolute">fghjagf</div>
+		
+		<script>
+			/*
+			 * animta().用于创建动画
+			 * 	
+			 * 对象.animate({属性设置},speed，callback)
+			 * 属性设置：通过key:value的方式设置，不同的属性之间使用逗号隔开，
+			 * 	speed：动画执行持续的时长,可以省略，默认为slow(600ms)
+			 * callback：动画执行完毕之后的回调函数
+			 */
+			
+			
+			//设置一个属性
+//			$("button").click(function(){
+//				$("div").animate({opacity:"0.5"});
+//			});
+			
+			//设置多个属性
+			//注意：需要设置的属性和js中设置的属性一样，div.style.fontSize = "xx"；
+			$("button").click(function(){
+				$("div").animate({
+					opacity:"0.5",
+					left:"100px",
+					top:"100px",
+					fontSize:"30px"
+				
+					},1000,function(){
+//					alert("动画执行完了~~~~");
+
+					$("div").animate({width:"200px",height:"300px"});
+	
+				});
+			});
+			
+		</script>
+		
+	</body>
+</html>

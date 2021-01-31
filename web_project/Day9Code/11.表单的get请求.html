@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			表单：向服务器提交不同类型的数据，
+			
+			action；服务器的地址
+			method：提交方式
+			
+			Url【统一资源定位符】：http://127.0.0.1/formget.php?username=hello&age=20&password=abc123
+			get请求：数据会出现在地址栏中，并且显示的格式为key1=value1&key2=value2.。。。
+				优点：快捷，简单
+				缺点：不安全，最大只能传输2kb的数据，不适合传输较大大数据【文件】
+			
+		-->
+		<form action="http://127.0.0.1/formget.php" method="get">
+			<input type="text" name="username" />
+			<input type="text" name="age" />
+			<input type="text" name="password" />
+			
+			<input type="submit" />
+		</form>
+	</body>
+</html>

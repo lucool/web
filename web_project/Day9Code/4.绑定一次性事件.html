@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		<button id="btn">点击</button>
+		
+		<script>
+			/*
+			 * 一次性事件：指定类型的事件只会触发一次，当第二次点击的时候将不起作用
+			 * 
+			 * one(type，fn)
+			 * 
+			 */
+			
+			$("#btn").one("click",function(){
+				console.log("hello");
+			});
+		</script>
+		
+	</body>
+</html>

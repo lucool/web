@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		<button id="btn">点击</button>
+		
+		<script>
+			$(function(){
+				//和js中相同，事件对象是一个隐式的参数，需要使用，则可以显式写出来
+				$("#btn").bind("click",function(event){
+					
+					//console.log(event);
+					
+					//获取当前事件的类型
+					//console.log(event.type);
+					
+					//获取触发该事件的元素
+					//console.log(event.target);
+					
+					
+					//获取和触发该事件相关的元素【冒泡模式和捕获模式】
+					//console.log(event.relatedTarget);
+					
+					//获取光标相对于页面的x坐标和y坐标
+					//注意：若页面上出现滚动条，则要考虑到滚动条的宽高
+					console.log(event.pageX,event.pageY);
+					
+				});
+			});
+		</script>
+	</body>
+</html>

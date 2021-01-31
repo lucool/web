@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		<div id="box1">
+			<p>1111</p>
+			<div>
+				<p>2222</p>
+			</div>
+		</div>
+		
+		<ul>
+			<li id="li1">111</li>
+			<li>222</li>
+			<li>333</li>
+			<li>444</li>
+			<li>555</li>
+			<li>666</li>
+		</ul>
+		
+		<script>
+			//【重点掌握】
+			//选择器1  选择器2：匹配选择器1中符合选择器2的所有的标签【子标签和后辈标签】
+//			var $jqObj = $("#box1 p");
+//			console.log($jqObj);
+
+
+			//选择器1 >选择器2：匹配选择器1中直接的子标签
+//			var $jqObj = $("#box1>p");
+//			console.log($jqObj);
+
+			
+			//选择器1+选择器2：只匹配选择器1后面的一个兄弟标签
+//			var $jqObj = $("#li1+li");
+//			console.log($jqObj);
+			
+			
+			//选择器1~选择器2：只匹配选择器1后面的所有的兄弟标签
+			var $jqObj = $("#li1~li");
+			console.log($jqObj);
+			
+		</script>
+	</body>
+</html>

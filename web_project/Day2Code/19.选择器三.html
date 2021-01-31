@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*通配符选择器*/
+			*{
+				color: red;
+				font-size: 20px;
+			}
+			
+			/*元素选择器*/
+			p{
+				font-weight: bolder;
+			}
+			
+			div{
+				color: cyan;
+			}
+			
+			/*类选择器:结合class属性使用*/
+			.cls1{
+				text-decoration: underline;
+			}
+			
+			.box{
+				color: blue;
+			}
+			
+			/*id选择器：结合id属性使用*/
+			#id1{
+				font-style: italic;
+			}
+			
+			#id2{
+				color: purple;
+			}
+			
+			#id3{
+				background-color: pink;
+			}
+			
+
+			/*
+			 * 选择器之间也存在优先级：当不同的选择器设置同一个属性的时候
+			 * id选择器 > 类选择器  > 元素选择器 >通配符选择器
+			 */
+			
+		</style>
+	</head>
+	<body>
+		
+		
+		<p class='cls1' id="id1">升职加薪</p>
+		<div id="id2" class="box" >迎娶白富美</div>
+		
+		<!--注意1：同一个类选择器可以同时作用于多个标签-->
+		<h3 class="cls1">标题</h3>
+		<!--注意2：多个类选择器可以同时作用于同一个标签【层叠】-->
+		<span class="box cls1">迎娶白富美</span>
+		
+		
+		<!--注意3：同一个id选择器可以同时作用于多个标签，可以呈现效果，但是，
+			在js中有一个获取标签对象的函数document.getElementById("id属性的值")的返回值为一个标签对象，会无法定位标签
+			所以一般情况下，一个id选择器只作用于一个标签
+		-->
+		<h1 id="id1">选择器</h1>
+		
+		<!--注意4：在id选择器中，不能多个选择器作用于同一个标签，是完全错误的语法-->
+		<a id="id1 id3">作用于一个标签</a>
+	</body>
+</html>

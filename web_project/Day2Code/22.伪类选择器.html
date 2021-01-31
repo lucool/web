@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*伪类选择器*/
+			/*设置鼠标悬浮样式*/
+			#p1:hover{
+				color: cyan;
+				font-size: 30px;
+			}
+			
+			/*添加头部和尾部*/
+			#p1:before{
+				content: "first";
+			}
+			#p1:after{
+				content: "last";
+			}
+			
+			/*设置第一个字符*/
+			#p2:first-letter{
+				font-size: 30px;
+				color: green;
+			}
+			
+			/*设置第一行*/
+			#p2:first-line{
+				background-color: pink;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<p id="p1">世上无难事</p>
+		<p id="p2">
+			只怕有心人只怕有心人只怕有心人只怕有心人只怕有心人
+			只怕有心人只怕有心人只怕有心人只怕有心人只怕有心人只怕有心人只怕有心人
+			只怕有心人只怕有心人只怕有心人只怕有心人只怕有心人只怕有心人
+		</p>
+	</body>
+</html>

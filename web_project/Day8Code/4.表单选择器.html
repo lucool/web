@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		
+		<form>
+			<input type="text" />
+			<input type="password" />
+			<input type="radio" />
+			<input type="checkbox" />
+			<input type="file" />
+			<input type="image" />
+			<input type="date" />
+			<input type="color" />
+			<input type="button" />
+			<input type="submit" />
+			<input type="reset" />
+			<input type="hidden" />
+		</form>
+		
+		<script>
+			//表单选择器只跟表单标签有关，选择器名称都是type属性的值
+			console.log($(":checkbox"));
+			console.log($(":text"));
+			console.log($(":file"));
+			console.log($(":submit"));
+		</script>
+		
+	</body>
+</html>

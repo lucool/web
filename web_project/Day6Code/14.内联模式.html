@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--在html标签中把事件处理函数作为属性执行js代码-->
+		<input type="button" value="按钮一" onclick="alert('hahhahhah')" />
+		
+		
+		<!--通过事件处理函数调用js函数-->
+		<input type="button" value="按钮二" onclick="func();" />
+		
+		
+		<script>
+			function func(){
+				document.write("hello");
+			}
+		</script>
+		
+		
+		<!--内联模式的缺点：违反了html和javascript代码层析分离的规则，后期的维护比较困难-->
+	</body>
+</html>

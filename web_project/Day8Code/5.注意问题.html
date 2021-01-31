@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		<!--<div id="box#text"></div>-->
+		
+		
+		
+		<div class="name">
+			<div style="display: none;">aaaa</div>
+			<div style="display: none;">aaaa</div>
+			<div style="display: none;">aaaa</div>
+			<div style="display: none;" class="name">aaaa</div>
+		</div>
+		
+		<div style="display: none;" class="name">aaaa</div>
+		<div style="display: none;" class="name">aaaa</div>
+		
+		
+		<script>
+			//1.如果选择器中包含#   .   ()  []  等特殊字符时，需要进行转义：\\
+//			var $jqObj = $("#box\\#text");
+			
+			
+			//2.空格在选择器中的使用
+			console.log($(.name :hidden));     //层次选择器
+			
+			console.log($(.name:hidden));      //过滤选择器
+		</script>
+	</body>
+</html>

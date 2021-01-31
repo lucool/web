@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			
+			/*通配符选择器*/
+			*{
+				color: red;
+				font-size: 20px;
+			}
+			
+			/*元素选择器*/
+			p{
+				font-weight: bolder;
+			}
+			
+			
+			div{
+				color: cyan;
+			}
+			
+			/*类选择器:结合class属性使用*/
+			.cls1{
+				text-decoration: underline;
+			}
+			
+			.box{
+				color: blue;
+			}
+			
+			
+			/*
+			 * 选择器之间也存在优先级：当不同的选择器设置同一个属性的时候
+			 * 类选择器  > 元素选择器 >通配符选择器
+			 */
+			
+		</style>
+	</head>
+	<body>
+		
+		
+		<p class='cls1'>升职加薪</p>
+		<div class="box">迎娶白富美</div>
+		
+		<!--注意1：同一个类选择器可以同时作用于多个标签-->
+		<h3 class="cls1">标题</h3>
+		
+		
+		<!--注意2：多个类选择器可以同时作用于同一个标签【层叠】-->
+		<span class="box cls1">迎娶白富美</span>
+		
+	</body>
+</html>

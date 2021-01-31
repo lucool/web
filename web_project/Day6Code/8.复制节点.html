@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 200px;
+				height: 200px;
+				background-color: cyan;
+			}
+		</style>
+	</head>
+	<body>
+		<ul id="ul">
+			<li>西施</li>
+			<li>貂蝉</li>     
+			<li>杨玉环</li>
+			<li>王昭君</li>
+			<li>凤姐</li>
+		</ul>
+		
+		<div id="box"></div>
+		
+		<button onclick="add();">添加</button>
+		<button onclick="copy();">拷贝</button>
+		
+		
+		<script>
+			
+			/*
+			 * 克隆节点
+			 * cloneNode()
+			 * 
+			 */
+			
+			//1.需求：将ul全部添加到div中
+			function add(){
+				//1.获取标签
+				//获取ul标签对象
+				var ul = document.getElementById("ul");
+				//获取div标签对象
+				var div = document.getElementById("box");
+				
+				//2.追加子节点
+				div.appendChild(ul);
+			}
+			
+			
+			//2.需求：将ul拷贝到div中
+			function copy(){
+				//1.获取标签
+				//获取ul标签对象
+				var ul = document.getElementById("ul");
+				//获取div标签对象
+				var div = document.getElementById("box");
+				
+				//2.给ul拷贝一个副本对象，放到类似剪切板
+				//true表示同意拷贝一个副本
+				var copyul = ul.cloneNode(true);
+				
+				//3.将副本对象追加为div的子节点
+				div.appendChild(copyul);	
+			}
+		</script>
+		
+	</body>
+</html>

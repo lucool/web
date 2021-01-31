@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		
+		<b>aaaa</b><p>hello</p>
+		
+		<div>
+			
+		</div>
+		
+		<button>点击</button>
+		
+		
+		<script>
+			/*
+			 * clone():将指定的标签拷贝出一个副本
+			 * 
+			 * clone(true):拷贝元素的同时将元素的事件拷贝
+			 */
+			
+			$("p").append($("b").clone());   //<b>aaaa</b><p>hello<b>aaaa</b></p>
+			$("b").clone().appendTo("p")     //<b>aaaa</b><p>hello<b>aaaa</b></p>
+			
+			
+			$("button").click(function(){
+				$(this).clone(true).appendTo("div");
+			});
+			
+		</script>
+	</body>
+</html>

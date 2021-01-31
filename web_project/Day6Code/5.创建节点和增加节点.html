@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="ul">
+			<li>西施</li>
+			<li id="li2">貂蝉</li>
+			<li>杨玉环</li>
+			<li>王昭君</li>
+			<!--<li>凤姐</li>-->
+		</ul>
+		
+		
+		<button onclick="append();">追加子节点</button>
+		<button onclick="insert();">插入子节点</button>
+		
+		
+		<script>
+			/*创建节点
+			 * createElement():创建标签节点
+			 * createTextNode():创建文本节点
+			 * createAttribute():创建属性节点
+			 */
+			
+			/*
+			 * 增加节点
+			 * appendChild():追加子节点
+			 * insertBefore():插入子节点
+			 */
+			
+			//注意：但凡涉及到子节点的操作，一般都要通过父节点执行
+			
+			//需求：在li的最后追加一个li子节点，文本内容为凤姐
+			function append(){
+				
+				//1.获取ul父节点
+				var ulEle = document.getElementById("ul");
+				
+				//2.创建节点
+				//创建文本节点
+				var textNode = document.createTextNode("凤姐");
+				//创建li节点
+				var liEle = document.createElement("li");
+				
+				//3.追加子节点
+				//注意：父节点对象.appendChild(子节点对象)
+				liEle.appendChild(textNode);
+				ulEle.appendChild(liEle);
+				
+			}
+			
+			//需求：在貂蝉的li的前面插入一个li子节点，文本内容为张三
+			function insert(){
+				//1.获取节点
+				var ulEle = document.getElementById("ul");
+				var li2Ele = document.getElementById("li2");
+				
+				//2.创建节点
+				//创建文本节点
+				var textNode = document.createTextNode("张三");
+				//创建li节点
+				var liEle = document.createElement("li");
+				
+				//3.追加子节点
+				liEle.appendChild(textNode);
+				
+				//4.插入子节点
+				//父节点对象.insertBefore(new,old)
+				ulEle.insertBefore(liEle,li2Ele);
+			}
+		</script>
+		
+	</body>
+</html>

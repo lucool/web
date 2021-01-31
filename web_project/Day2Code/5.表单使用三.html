@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			*{
+				font-size: 14px;
+			}
+			
+			.input{
+				width: 220px;
+				height: 25px;
+			}
+			
+			caption{
+				font-weight: 700;
+			}
+		</style>
+	</head>
+	<body>
+		<!--在form内部可以去嵌套任意的标签
+			input标签可以单独使用，表示输入框
+		-->
+		<form>
+			<table height="400px">
+				<caption>还没有开心网账号，赶紧注册一个</caption>
+				
+				<tr>
+					<td>电子邮箱：</td>
+					<td>
+						<input type="text" placeholder="请输入邮箱" name="email" class="input" />
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						<font color="lightgray">
+							如果没有邮箱，可以使用<a href="#" style="text-decoration:none;">手机号码</a>注册
+						</font>
+					</td>
+				</tr>
+				<tr>
+					<td>电子邮箱：</td>
+					<td>
+						<input type="text" placeholder="请输入邮箱" name="email" class="input" />
+					</td>
+				</tr>
+				<tr>
+					<td>电子邮箱：</td>
+					<td>
+						<input type="text" placeholder="请输入邮箱" name="email" class="input" />
+					</td>
+				</tr>
+				<tr>
+					<td>性别：</td>
+					<td>
+						<input type="radio" />男
+						<input type="radio" />女
+					</td>
+				</tr>
+				<tr>
+					<td>生日：</td>
+					<td>
+						<select name="" id="">
+							<option value=""></option>
+							<option value=""></option>
+							<option value=""></option>
+							<option value=""></option>
+						</select>年
+						<select name="" id="">
+							<option value=""></option>
+							<option value=""></option>
+							<option value=""></option>
+							<option value=""></option>
+						</select>月
+						<select name="" id="">
+							<option value=""></option>
+							<option value=""></option>
+							<option value=""></option>
+							<option value=""></option>
+						</select>日
+					</td>
+				</tr>
+				<tr>
+					<td>我现在：</td>
+					<td>
+						<input type="radio" />上学
+						<input type="radio" />工作
+					</td>
+				</tr>
+				<tr>
+					<td>电子邮箱：</td>
+					<td>
+						<input type="text" placeholder="请输入邮箱" name="email" class="input" />
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						<input type="checkbox" checked="checked"/>同意<a href="#" style="text-decoration: none;color: lightskyblue;">开心网服务条款</a>
+					</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>
+						<input type="submit" value="立即注册" style="width: 100px;height: 30px; background-color:lightskyblue ;color: white;"/>
+					</td>
+				</tr>
+				
+			</table>
+		</form>
+	</body>
+</html>

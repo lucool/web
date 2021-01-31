@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--
+			
+			Url【统一资源定位符】：http://127.0.0.1/formpost.php
+			post请求：数据通过浏览器内部传输
+				优点：安全，上传文件的大小理论上没有限制的，适合上传较大的数据
+				缺点：工作原理比get麻烦
+			
+		-->
+		<form action="http://127.0.0.1/formpost.php" method="post">
+			<input type="text" name="username" />
+			<input type="text" name="age" />
+			<input type="text" name="password" />
+			
+			<input type="submit" />
+		</form>
+	</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//1.使用Object直接创建
+			var obj = new Object();
+			//动态绑定属性
+			obj.name  = "zhangsan";
+			obj.age = 18;
+			//this类似于Python中的self，表示当前的对象
+			obj.show = function(){
+				document.write("姓名：" + this.name + "年龄：" + this.age);
+			}
+			obj.show();
+			
+			//2.通过字面量【Json格式】的方式创建对象
+			var obj = {
+				name:"jack",
+				age:20,
+				check:function(){
+					document.write("姓名：" + this.name + "年龄：" + this.age);
+				}
+			}
+			
+			//对象.属性
+			obj.check();
+			document.write("<br />");
+			document.write(obj.name);
+			
+			//对象[属性]
+			document.write(obj['name']);
+			document.write("<br />");
+			
+			//删除指定对象的属性
+			delete obj.name;
+			document.write(obj['name']);   //undefined
+			
+		</script>
+	</body>
+</html>
+

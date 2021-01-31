@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="ul"><li id="l1">西施</li><li>貂蝉</li><li>杨玉环</li><li>王昭君</li><li>凤姐</li></ul>
+		<script>
+			/*
+			 * parentNode:通过子节点获取父节点
+			 * childNodes:通过父节点获取子节点  【重点掌握】
+			 * firstChild:第一个子节点
+			 * lastChild:最后一个子节点
+			 */
+			
+			//注意：在书写html标签的时候，按下的回车会被浏览器识别为文本节点【Text】,也会被当做一个节点的子节点
+			
+			//1.childNodes
+			//获取ul节点对象
+			var ul = document.getElementById("ul");
+			var r1 = ul.childNodes;
+			document.write(r1);
+			document.write(r1.length);   //11
+			
+			document.write("<br />");
+			
+			//2.firstChild和lastChild
+			document.write(ul.firstChild);
+			document.write("<br />");
+			document.write(ul.lastChild);
+			
+			
+			//3.parentNode
+			var li = document.getElementById("l1");
+			document.write(li.parentNode);   //[object HTMLUListElement]
+			
+		</script>
+	</body>
+</html>

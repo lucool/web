@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<!--表单-->
+		<!--action,method:默认为get提交方式-->
+		<!--
+			两种提交方式的区别;
+				a.安全性：post比get相对安全
+				b.数据传输方式：get的数据在地址栏中随着url【统一资源定位符】发送，但是，post的数据随着请求体发送，具体的内容在ajax中演示
+				c.效率高低：get比post效率相对较高
+				d.使用场景:post适用于传输安全级别比较高的数据，get适用于一般数据的传递
+		-->
+		<form action="#" method="post">
+			
+			<!--
+				name:用于区分提交给服务器的数据的类型【特别注意：单选和多选都需要设置为同一个name】
+				value:用于区分同类数据中不同的值【主要针对的是单选和多选】
+			-->
+			
+			<!--普通文本输入项-->
+			手机号码：<input type="text" name="phonenum" /><br />
+			用户名：<input type="text" name="username" /><br />
+			<!--密码输入项-->
+			创建密码：<input type="password" name="pwd"/><br />
+			<!--单项选择项-->
+			<!--在单项或者多项选择项中，可以通过checked="checked"设置默认选择项-->
+			性别：<input type="radio" name="sex" value="male" />男
+			     <input type="radio" name="sex" value="female" checked="checked"/>女
+			
+			<br />
+			<!--多项选择项-->     
+			爱好：<input type="checkbox" name="hobby"  value="sing" checked="checked"/>唱歌
+			      <input type="checkbox" name="hobby" value="dance"/>跳舞
+			      <input type="checkbox" name="hobby" value="play"/>弹琴
+			      <input type="checkbox" name="hobby" value="other"/>其他
+			<br />
+			      
+			<!--图片选择项或者文件选择项-->
+			<!--上传头像：<input type="image" />-->
+			上传头像：<input type="file" name="headimg"/>
+			<br />
+			
+			<!--下拉选择项-->
+			生日：<select name="birth">
+					<option value="1990">1990</option>
+					<option value="1991">1991</option>
+					<option value="1992">1992</option>
+					<!--selected="selected"设置下拉选择项的默认选项-->
+					<option value="1993" selected="selected">1993</option>
+					<option value="1994">1994</option>
+				 </select>
+			<br />
+				 
+			自我评价：<textarea name="des"></textarea>
+			<br />
+			
+			<!--按钮-->
+			<!--提交按钮：当点击提交按钮，将当前表单中用户的所有的信息提交到指定的服务器上-->
+			<!--提交按钮默认的文本为提交，通过value可以设置文本-->
+			<input type="submit" value="注册" />
+			
+			<!--重置按钮/复原按钮-->
+			<!--重置按钮默认的文本为重置，通过value可以设置文本-->
+			<!--<input type="reset" value="reset"/>-->
+			
+			<!--一般按钮：没有文本，需要设置-->
+			<!--<input type="button" value="点击"/>-->		  
+		</form>
+		
+		
+		<!--补充：按钮标签除了可以使用input之外，还可以使用button-->
+		<!--<button onclick="alert('fhajhfjaghja')">点击</button>-->
+	</body>
+</html>
+
+
+<!--
+未设置任何属性
+	http://127.0.0.1:8020/Day2Code/3.%E8%A1%A8%E5%8D%95%E4%BD%BF%E7%94%A8%E4%B8%80.html?#
+设置了name属性
+	http://127.0.0.1:8020/Day2Code/3.%E8%A1%A8%E5%8D%95%E4%BD%BF%E7%94%A8%E4%B8%80.html?
+	phonenum=545&username=ggs&pwd=gsgrersg&sex=on&hobby=on&hobby=on&headimg=&birth=1992&des=grhrhrrh#
+设置了value属性
+	http://127.0.0.1:8020/Day2Code/3.%E8%A1%A8%E5%8D%95%E4%BD%BF%E7%94%A8%E4%B8%80.html?
+	phonenum=aga&username=gag&pwd=gag&sex=male&hobby=dance&hobby=play&headimg=&birth=1990&des=gaga#
+-->

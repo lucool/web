@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		<p>I would like to say: </p>
+		<p id="p1">I would like to say: </p>
+		
+		<script>
+			/*
+			 * 标签对象.remove():删除所有匹配到的元素    				*******
+			 * 标签对象.remove(selector):只删除指定选择器匹配到的元素
+			 * 
+			 * 
+			 * 标签对象.detach():删除所有匹配到的元素
+			 * 标签对象.detach(selector):只删除指定选择器匹配到的元素
+			 */
+			//$("p").remove();
+			$("p").remove("#p1");
+			
+			//$("p").detach();
+			$("p").detach("#p1");
+			
+			
+			/*
+			 * 【面试题】：区分jQuery中的remove和detach函数
+			 * 相同点：
+			 * 	    a.都能删除指定的元素
+			 * 		b.匹配到的元素不会从jQuery对象中删除，会被保留下来，将来还可以接着使用
+			 * 		c.使用方式相同，可以删除全部匹配到的元素或者只删除指定的元素
+			 * 
+			 * 不同点：
+			 * 		a.remove会移除元素上面绑定的事件以及附加的数据，但是，detach会保留元素上面绑定的事件以及附加的数据
+			 */
+			
+			
+			//empty():清空某个标签中的所有内容
+			
+		</script>
+	</body>
+</html>

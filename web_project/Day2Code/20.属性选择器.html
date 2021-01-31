@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*属性选择器*/
+			/*方式一*/
+			/*p[name]{
+				color: red;
+			}*/
+			
+			/*方式二*/
+			/*p[name='aaa']{
+				color: red;
+			}*/
+			
+			
+			/*其他写法*/
+			/*.cls1[name]{
+				color: blue;
+			}*/
+			
+			.cls1[name='aaa']{
+				color: blue;
+			}
+			
+		</style>
+	</head>
+	<body>
+		<p name="aaa" class="cls1">1111</p>
+		<p name="ddd" class="cls1">2222</p>
+		<p name="aaa" class="cls2">3333</p>
+		<p name="ccc">4444</p>
+		<p name="bbb">5555</p>
+		<p>66666</p>
+		
+		<div name="aaa" class="cls1">aaaaaaa</div>
+	</body>
+</html>

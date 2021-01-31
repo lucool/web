@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="ul"><li>西施</li><li>貂蝉</li><li id="l3">杨玉环</li><li>王昭君</li><li>凤姐</li></ul>
+		<script>
+			/*
+			 * nextSibling:获取指定节点的下一个兄弟节点
+			 * perviousSibling:获取指定节点的上一个兄弟节点
+			 */
+			
+			//获取指定节点
+			var li3 = document.getElementById("l3");
+			var next = li3.nextSibling;
+			document.write(next.innerHTML);
+			
+			var previous = li3.previousSibling;
+			document.write(previous.innerHTML);
+			
+			
+			//补充：js中操作css
+			//标签节点对象.style.属性  = "值";
+			
+			next.style.color = "red";
+			next.style.backgroundColor = "blue";
+			next.style.fontSize = "30px";
+			
+		</script>
+	</body>
+</html>

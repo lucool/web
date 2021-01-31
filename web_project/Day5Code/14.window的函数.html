@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<button onclick="openwindow();">打开新窗口</button>
+		<button onclick="closewindow();">关闭窗口</button>
+		<script>
+			function openwindow(){
+				//如果设定blank，则表示重新打开一个新的浏览器窗口，设置的宽高和定位都是参照的是计算机屏幕窗口
+				//如果不设定blank，则表示在当前浏览器窗口中打卡一个新的窗口，设置的宽高和定位都无效
+				window.open("greenWindow.html","blank","width=400px,height=400px,left=0px,top=0px");
+			}
+			
+			function closewindow(){
+				//关闭的是当前窗口
+				window.close();
+			}
+		</script>
+	</body>
+</html>

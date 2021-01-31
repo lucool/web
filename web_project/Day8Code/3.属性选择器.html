@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		<div name="sssdiv1vvv">第一个div</div>
+		<div name="bbbbdiv1">第er个div</div>
+		<div name="div1aaa">第san个div</div>
+		<div name="div4">第si个div</div>
+		<div name="div5">第wu个div</div>
+		<div name="div6" id="box">第liu个div</div>
+		
+		
+		
+		<script>
+			
+			//1.[attribute]  匹配包含指定属性的元素         *******
+			console.log($("div[name]"));
+			
+			
+			//2.[attribute=value]  匹配包含指定属性并且值为value的元素          ******
+			console.log($("div[name=div1]"));
+			
+			
+			//3.[attribute!=value]  匹配包含指定属性并且值不为value的元素
+			console.log($("div[name!=div1]"));
+			
+			
+			//4.[attribute*=value]  匹配包含指定属性并且值中包含value的元素
+			console.log($("div[name*=div1]"));
+			
+			
+			//5.[attribute^=value]  匹配包含指定属性并且值以value开头的元素
+			console.log($("div[name^=div1]"));
+			
+			
+			//6.[attribute$=value]  匹配包含指定属性并且值以value结尾的元素
+			console.log($("div[name$=div1]"));
+			
+			
+			//7.[selector1][selector2][selector3]....类似组合选择器,同时符合多个要求的标签
+			console.log($("div[name=div1][id]"));
+			
+		</script>
+	</body>
+</html>

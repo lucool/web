@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*导入样式*/
+			@import url("css/green.css");
+		</style>
+		<!--链接样式-->
+		<link href="css/red.css" type="text/css" rel="stylesheet" />
+		
+		<!--内嵌样式
+		-->
+		<!--<style>
+			
+			p{
+				color: cyan;
+			}
+			
+		</style>-->
+		
+	</head>
+	<body>
+		<!--行内样式-->
+		<!--<p style="color: blue;">不放弃不抛弃</p>-->
+		<p>不放弃不抛弃</p>
+	</body>
+</html>
+<!--
+	优先级的前提：对相同的属性设置值
+	
+	
+	1.当四种样式同时出现,行内样式的优先级最高
+	2.内嵌和链接：谁后出现则使用谁
+	3.在同一个style标签中，当导入和内嵌同时出现，不管顺序怎样，都识别的是内嵌样式
+	   在不同的style标签中，谁后出现则使用谁
+	4.链接和导入：谁后出现则使用谁
+-->

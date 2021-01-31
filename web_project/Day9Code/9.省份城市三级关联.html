@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#city,#country{
+				display: none;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+		<script type="text/javascript" src="js/city.js"></script>
+	</head>
+	<body>
+		<select id="province"></select>
+		<select id="city"></select>
+		<select id="country"></select>
+		
+		<script>
+			$(function(){
+				
+				//1.加载省份
+				function loadProvince(){
+					//获取键获取所有的省份
+					var proArr = zcityData["0"];
+					
+					var proStr = "<option value='-1'>请选择</option>";
+					
+					//遍历数组
+					for(var i = 0;i < proArr.length;i++){
+						proStr += "<option value='" + i + "'>"  + proArr[i] +  " </option>";
+					}
+					
+					//给省份的select设置html内容
+					$("#province").html(proStr);
+				}
+				
+				loadProvince();
+				
+				
+				//2.加载区和城市
+				function loadCity(){
+					//当省份的选中状态发生改变的时候加载城市的select
+					$("#province").change(function(){
+						
+						//修复bug
+						$("#country").css("display","none");
+						
+						
+						//获取选择的省份的value值
+						var proVal = $(this).val();
+						
+						//如果是“请选择”，则结束函数
+						if(proVal == -1){
+							return;
+						}
+						
+						//手动拼接键
+						var cityVal = "0_" + proVal;
+						//通过键获取对应的数组
+						var cityArr = zcityData[cityVal];
+						
+						var cityStr = "<option value='-1'>请选择</option>";
+						
+						for(var i = 0;i < cityArr.length;i++){
+							cityStr += "<option value='" +  cityVal + "_" + i  + "'>" + cityArr[i] +  "</option>";
+						}
+						
+						//赋值
+						$("#city").html(cityStr);
+						
+						//让select显示出来
+						$("#city").css("display","inline-block");
+							
+					});
+				}
+				
+				loadCity();
+				
+				
+				//3.加载区和县
+				function loadCountry(){
+					$("#city").change(function(){
+						//获取选择的城市的value值
+						var cityVal = $(this).val();
+						
+						//如果选中的是"请选择"，则结束函数
+						if(cityVal == -1){
+							return;
+						}
+						
+						//通过键获取对应的数组
+						var counArr = zcityData[cityVal];
+						
+						var counStr = "<option value='-1'>请选择</option>";
+						
+						
+						//遍历
+						for(var i = 0;i < counArr.length;i++){
+							counStr += "<option>" + counArr[i] +  "</option>";
+						}
+						
+						//赋值
+						$("#country").html(counStr);
+						
+						//显示
+						$("#country").css("display","inline-block");		
+						
+					});
+				}
+				
+				loadCountry();	
+			});	
+		</script>
+	</body>
+</html>

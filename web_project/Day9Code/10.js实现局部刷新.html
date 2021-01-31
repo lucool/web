@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<h1>注册页面</h1>
+		<form action="#" method="get" id="form1">
+			<label>用户名：</label>
+			<input type="text" placeholder="请输入用户名" name="username"/>
+			<span id="userspan"></span>
+			<br />
+			<label>密码：</label>
+			<input type="password" placeholder="请输入密码" name="pwd" id="pwdinput"/>
+			<span id="pwdspan"></span>
+			<br />
+			<input type="submit" value="注册" />
+		</form>
+		
+		
+		<script>
+			window.onload = function(){
+				//获取标签对象
+				var form = document.getElementById("form1");
+				var userspan = document.getElementById("userspan");
+				
+				form.onsubmit = function(){
+					//校验用户名
+					//form.username相当于var userinput = document.getElementById("userInput");
+					var userValue = form.username.value;
+					
+					if(!userValue){
+						
+						//当用户名为空的时候，给用户一个提示，阻止表单提交
+						userspan.innerHTML = "*用户名不能为空";
+						
+						return false;
+					}
+					
+					//表单填写正确，则允许提交
+					return true;
+				}
+			}
+		</script>
+	</body>
+</html>

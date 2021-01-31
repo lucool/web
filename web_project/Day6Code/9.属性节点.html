@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<input type="text" id="inputid" value="hello" class="cls" />
+		<script>
+			/*
+			 * 属性节点
+			 * createAttribute():创建属性节点
+			 * getAttributeNode()；获取属性节点
+			 * getAtttibute()；获取属性值
+			 * setAttribute():设置属性值
+			 * removeAttribute():删除属性节点
+			 */
+			
+			
+			//获取标签节点
+			var inputEle = document.getElementById("inputid");
+			
+			
+			//1.获取属性值
+			//注意：操作属性节点的前提：必须先获取标签节点
+			//方式一:对象.属性
+			//document.write(inputEle.value);
+			
+			//方式二：getAttribute("属性名")
+			//document.write(inputEle.getAttribute("value"));
+			
+			
+			//2.设置属性值
+			//方式一：对象.属性 = 值
+			//inputEle.value = "baced";
+			
+			//方式二：setAttribute(属性，值)
+			//inputEle.setAttribute("value","hahahhahah");
+			
+			//3.删除属性和对应的值
+			document.write(inputEle.getAttribute("class") + "<br />");
+			inputEle.removeAttribute("class");
+			document.write(inputEle.getAttribute("class") + "<br />");   //null
+			
+			
+			document.write(inputEle.getAttribute("value") + "<br />");
+			inputEle.removeAttribute("value");
+			document.write(inputEle.getAttribute("value") + "<br />");   //null
+			
+			
+		</script>
+	</body>
+</html>

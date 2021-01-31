@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		<div>
+			<p>abfahjgbjagb</p>
+		</div>
+		
+		<div>
+			<p>hello</p>
+		</div>
+		
+		<!--
+			abfahjgbjagb；是div的文本内容
+			<p>abfahjgbjagb</p>：是div的html内容
+		-->
+		
+		<script>
+			/*
+			 * text():获取,获取所有匹配到的标签的文本内容
+			 * text(xx)：设置，给所有匹配到的标签设置新的文本内容
+			 */
+			
+			//console.log($("div").text());
+			
+			//$("div").text("新的文本");
+			
+			
+			/*
+			 * html():获取,获取所有匹配到的第一个标签的html内容
+			 * html(xx)：设置，给所有匹配到的标签设置新的文本内容
+			 * 
+			 * 
+			 * 注意：类似于js中的innerHTML属性
+			 */
+			
+			console.log($("div").html());
+			
+			//a.设置纯文本
+			//$("div").html("新的文本");
+			
+			//b。设置html标签
+			$("div").html("<h3>hello</h3>");
+		</script>
+	</body>
+</html>

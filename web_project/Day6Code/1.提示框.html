@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//1.alert(常量或者变量)：向用户展示信息
+//			alert("hello!");
+			
+			
+			//2.confirm("选择信息")：向用户提供选项，一般只有两个：确定和取消
+			//该函数有返回值，返回值为用户的选择,如果选择了确定，则返回true，反之返回false
+			/*var result = confirm("确定要删除该项吗？");
+			//document.write(result);
+			if(result){
+				document.write("你选择了确定");
+			}else{
+				document.write("你选择了取消");
+			}*/
+			
+			//3.prompt("提示"，默认值)，向用户提供选项，一般只有两个：确定和取消
+			//函数的返回值为用户输入的数据
+			var num = prompt("请输入一个数字：",0);
+			document.write(num);
+			
+		</script>
+	</body>
+</html>

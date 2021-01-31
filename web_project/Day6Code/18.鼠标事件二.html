@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 100px;
+				height: 100px;
+				background-color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		
+		<script>
+			//需求：移入标签内部，背景色为红色，移出则为蓝色
+			var divObj = document.getElementById("box");
+			
+			
+			divObj.onmouseover = function(){
+				divObj.style.backgroundColor = "red";
+				
+			}
+			
+			divObj.onmouseout = function(){
+				divObj.style.backgroundColor = "blue";
+			}
+			
+		</script>
+	</body>
+</html>

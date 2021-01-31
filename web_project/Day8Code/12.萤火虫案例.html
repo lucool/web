@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			#container{
+				width: 100%;
+				height: 100%;
+				background: url(img/bg.jpg);
+			}
+			
+			body,html{
+				height: 100%;
+				margin: 0px;
+				padding: 0px;
+			}
+			
+			img{
+				width: 30px;
+				height: 30px;
+				/*定位属性：设置图片的位置*/
+				position: absolute;
+			}
+			
+		</style>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		
+		<!--整体-->
+		<div id="container">
+			
+		</div>
+		
+		<script>
+			setInterval(function(){
+				
+				//创建img的标签对象
+				var $fireworm = $("<img src='img/萤火虫.jpg' />");
+				
+				//将img添加为div的子标签
+				$("#container").append($fireworm);
+				
+				
+				//获取div的宽和高,为了限制img出现的范围
+				var divWidth = $("#container").width();
+				var divHeight = $("#container").height();
+				
+				
+				//获取随机数，定位img的绝对位置
+				var left1 = Math.floor(Math.random() * divWidth)  + "px";
+				var top1 = Math.floor(Math.random() * divHeight)  + "px";
+				
+				//设置img的属性
+				$fireworm.css({
+					left:left1,
+					top:top1
+				});
+				
+				
+				//让img在限定的范围内移动
+				function fly(){
+					//再次获取随机数，修改img的位置
+					var left2 = Math.floor(Math.random() * divWidth)  + "px";
+					var top2 = Math.floor(Math.random() * divHeight)  + "px";
+					
+					//给img设置动画
+					$fireworm.animate({
+						
+						left:left2,
+						top:top2
+						
+					},3000,function(){
+						fly();
+					});
+				}
+				
+				fly();
+				
+			},2000);
+		</script>
+	</body>
+</html>

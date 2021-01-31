@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//函数的定义
+			/*
+			 * 方式一：function【重点掌握】
+			 * function 函数名(形参列表){
+			 * 		函数体
+			 * }
+			 */
+			function func1(){
+				console.log("hello");
+			}
+			//调用
+			func1();
+			
+			function func2(a,b){
+				console.log(a + b);
+			}
+			func2(1,2);
+			
+			function func3(a,b){
+				return a + b;
+			}
+			var r = func2(1,2);
+			console.log(r);
+			
+			
+			/*
+			 * 方式二：匿名函数【重点掌握】
+			 * var  变量  = function(形参列表){函数体}
+			 */
+			//注意：使用最多的场景：应用在js的事件【DOM】中
+			
+			//r1就是一个引用，指向了一个函数
+			var r1 = function(a,b){
+				console.log(a - b);
+			};
+			r1(30,10);
+			
+			
+			/*
+			 * 方式三：Function对象【了解：一般用于动态创建函数】
+			 * var 变量  = new Function("形参列表"，"函数体")
+			 */
+			//注意：只能实现有限的逻辑，如果代码比较复杂，则代码的可读性和维护性都会降低
+			var r2 = new Function("a,b","var sum = a + b;return sum;");
+			var total = r2(3,5);
+			console.log(total);
+		</script>
+	</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="ul">
+			<li>西施</li>
+			<li id="li2">貂蝉</li>
+			<li>杨玉环</li>
+			<li>王昭君</li>
+			<li>凤姐</li>
+		</ul>
+		
+		
+		<button onclick="remove();">删除子节点</button>
+		
+		<script>
+			/*
+			 * 删除子节点
+			 * removeChild()
+			 * 
+			 * 注意：必须通过父节点才能删除子节点
+			 */
+			
+			function remove(){
+				//1.获取ul父节点
+				var ulEle = document.getElementById("ul");
+				
+				//2.获取需要被删除的节点
+				var liEle = document.getElementById("li2");
+				
+				//3.删除子节点
+				//父节点对象.removeChild(子节点对象)
+				ulEle.removeChild(liEle);				
+			}
+			
+		</script>
+	</body>
+</html>

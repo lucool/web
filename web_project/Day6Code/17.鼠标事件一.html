@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 100px;
+				height: 100px;
+				background-color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		
+		<script>
+			var divObj = document.getElementById("box");
+			
+			//添加事件
+			divObj.onclick = function(){
+				console.log("单击");
+			}
+			
+			divObj.ondblclick = function(){
+				console.log("双击");
+			}
+			
+			
+			divObj.onmousedown = function(){
+				console.log("按下");
+			}
+			
+			divObj.onmouseup = function(){
+				console.log("抬起");
+			}
+			
+			divObj.onmouseover = function(){
+				console.log("移进去");
+			}
+			
+			divObj.onmouseout = function(){
+				console.log("移出来");
+			}
+			
+			divObj.onmousemove = function(){
+				console.log("移动");
+			}
+		</script>
+	</body>
+</html>

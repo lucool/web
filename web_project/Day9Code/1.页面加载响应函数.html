@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		
+		<script>
+			//页面加载响应函数：当html文件中所有的内容加载完毕之后才会自动触发的事件
+			//1.js中的页面加载响应函数
+			/*window.onload = function(){
+				alert("11111");
+			}
+			window.onload = function(){
+				alert("22222");
+			}
+			window.onload = function(){
+				alert("33333");
+			}*/
+			/*
+			 * js中的window.onload事件如果出现多次，则只会执行最后一次，在一个html文件中，windolw.onload事件尽量只出现一次
+			 */
+			
+			
+			//2.jQuery中的页面加载响应函数
+			$(document).ready(function(){
+				alert("11111");
+			});
+			
+			$(document).ready(function(){
+				alert("22222");
+			});
+			
+			$(document).ready(function(){
+				alert("33333");
+			});
+			/*
+			 * jQuery中的$(document).ready函数如果出现多次，则按照从上往下的顺序执行，在一个html文件中，可以出现多次
+			 */
+			
+			//3.jQuery中的页面加载响应函数的简写
+			//3.1
+			$().ready(function(){
+				alert("444444");
+			});
+			
+			//3.2
+			$(function(){
+				alert("5555555");
+			});
+			
+			
+			//4.js和jQuery中的其他的不同点【面试题】
+			/*
+			 * js中的window.onload：会等待当前html文件中所有的内容【包括关联的文件，如：图片，音视频，外部的资源】加载完毕才会执行函数，
+			 * 当在js中的window.onload的函数中访问html的资源，则可以保证肯定能够访问到
+			 * 
+			 *  jQuery中的$(document).ready：会等待当前html文件中所有的标签加载完毕才会执行函数，
+			 * 当在 jQuery中的$(document).ready的函数中访问html的资源，则有可能会访问不到【网速慢，有可能导致资源加载不完全】
+			 */
+			
+			
+			//补充：如果涉及到网络资源，则可以使用下面的函数代替
+			$(window).load(function(){
+				
+			});
+			
+		</script>
+		
+	</body>
+</html>

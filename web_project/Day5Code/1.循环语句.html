@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//1.for循环
+			//1.1for-in语句
+			var arr1 = [2,4,3,43]
+			for(i in arr1){
+				console.log(arr1[i]);
+			}
+			
+			//1.2简单for循环
+			/*
+			 * for(初始化表达式;条件表达式;循环之后的操作表达式){
+			 * 		循环体
+			 * }
+			 */
+//			for(var m = 0;m < 10;m++){
+//				console.log(m);
+//			}
+			
+			
+			//2.while循环
+			/*
+			 * 初始化表达式
+			 * while(条件表达式){
+			 *     循环体
+			 * 		循环之后的操作表达式
+			 * }
+			 */
+//			var n = 0;
+//			while(n < 10){
+//				console.log(n);
+//				//n = n + 1;
+//				//n++;
+//				++n;
+//			}
+			
+			
+			//练习：使用for和while两种方式求1~100之间的和
+			var total1 = 0;
+			for(var n1 = 1;n1 <= 100;n1++){
+				total1 += n1;
+			}
+			console.log(total1);
+			
+			var total2 = 0;
+			var n2 =1;
+			while(n2 <= 100){
+				total2 += n2;
+				n2++;
+			}
+			console.log(total2);
+			
+			//3.do-while语句
+			/*初始化表达式
+			 * do{
+			 * 	   循环体
+			 *    循环之后的操作表达式
+			 * }while(条件表达式)；
+			 */
+			var a = 0;
+			do{
+				console.log(a);
+				a++;
+			}while(a < 10);
+			
+			
+			//4.while和do-while的区别
+			var b1 = 3;
+			while(b1 < 1){
+				console.log("hello");
+			}
+			
+			
+			var b2 = 3;
+			do{
+				console.log("hello~~~~111");
+			}while(b2 < 1);
+			
+			//不管条件是否成立，do-while至少执行一次，在实际开发中，使用while较多
+			
+			//5.break和continue
+			/*
+			 * break
+			 * 		使用范围：使用在分支语句switch语句和循环语句中
+			 * 		特点：用在switch语句中，表示跳出switch语句；用在循环中，默认结束当前循环
+			 * 
+			 * continue:
+			 * 		使用范围：只能使用在循环语句中
+			 * 		特点：结束本次循环，继续下一次循环
+			 */
+			
+			//break使用在嵌套语句中
+			//在js中，如果break出现在嵌套循环中，可以使用标签选择需要跳出的循环
+			//具体做法：给每个循环起一个名称，break只需要通过 该名称区分跳出的循环
+			loop1:
+			for(var i = 0;i < 3;i++){
+				loop2:
+				for(var j = 0;j < 5;j++){
+					document.write(i + "=" + j + "<br />");
+					if(j == 2){
+						break loop1;
+					}
+				}
+			}
+			
+			//练习：打印九九乘法表
+			for(var i = 1;i <= 9;i++){
+				for(var j = 1;j <= i;j++){
+					document.write(j + 'x' + i + '=' + i * j + " ");
+				}
+				
+				document.write("<br />");
+			}
+			
+		</script>
+	</body>
+</html>

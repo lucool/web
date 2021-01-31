@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		
+		<button id="btn">点击</button>
+		
+		<div id="box">
+			<p>第一个p标签</p>
+			<p>第二个p标签</p>
+			<p>第三个p标签</p>
+			<p>第四个p标签</p>
+		</div>
+		
+		<script>
+			//事件的绑定函数：bind()    delegate()    on()    click/dblclick/mouseover()
+			
+			$(document).ready(function(){
+				//1.bind()
+				//需求1：点击按钮，给div添加一个子标签p
+				$("#btn").bind("click",function(){
+					$("#box").append("<p>hello</p>");
+				});
+				
+				//移除：unbind(type),移除指定类型的事件【一个标签可以同时绑定多个事件】
+				$("#btn").unbind("click");
+				
+				
+				//2.delegate()
+				
+				//需求：点击已有的p标签，给div添加一个子标签p
+				$("#box").delegate("p","click",function(){
+					$("#box").append("<p>hello</p>");
+					
+					//注意：在一个事件的函数内部，是否要使用this取决于当前事件的触发对象
+					//$(this).append("<p>hello</p>");
+				});
+				
+				//移除：undelegate(委托，type)
+				$("#box").undelegate("p","click");
+				
+				
+				//3.on()
+				/*
+				 * 代理.on(type,委托，fn)
+				 */
+				//需求：点击已有的p标签，给div添加一个子标签p
+				/*$("#box").on("click","p",function(){
+					$("#box").append("<p>hello</p>");
+				});*/
+				
+				//移除：off(type,委托)
+				$("#box").off("click","p");	
+	
+			});	
+		</script>
+		
+	</body>
+</html>

@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			/*结构选择器*/
+			/*设置第一个或者最后一个子标签*/
+			/*ul li:first-child{
+				color: red;
+			}
+			
+			ul li:last-child{
+				color: blue;
+			}*/
+			
+			/*顺序查找*/
+			/*设置第几个子标签，数字从1开始
+			 * odd:奇数
+			 * even:偶数
+			 */
+			/*ul li:nth-child(2){
+				color: blue;
+			}*/
+			/*ul li:nth-child(even){
+				color: blue;
+			}*/
+			
+			/*倒序查找*/
+			/*ul li:nth-last-child(2){
+				color: blue;
+			}*/
+			
+			/*表示否定*/
+			/*li:not(#li3){
+				color: purple;
+			}*/
+			
+			/*组合选择器*/
+			/*li,p,#box,span{
+				color: red;
+			}
+			*/
+			
+			/*li,p,div,span{
+				color: red;
+			}
+			*/
+			
+			li,.p1,#box,span{
+				color: red;
+			}
+			
+			
+		</style>
+	</head>
+	<body>
+		<ul>
+			<li>1111</li>
+			<li>2222</li>
+			<li id='li3'>3333</li>
+			<li>4444</li>
+			<li>5555</li>
+			<li>6666</li>
+		</ul>
+		
+		
+		<p class="p1">gaga</p>
+		<div id="box">gadga</div>
+		<span>fa</span>
+	</body>
+</html>

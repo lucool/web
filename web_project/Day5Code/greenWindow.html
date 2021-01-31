@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				background-color:green;
+			}
+		</style>
+	</head>
+	<body>
+		<button onclick="func2();">回到红色页面</button>
+		<button onclick="previous();">上一页</button>
+		<button onclick="next();">下一页</button>
+		
+		
+		<script>
+			function func2(){
+				//红---》蓝----》绿
+				//-2   -1       0
+				window.history.go(-2)
+				
+			}
+			
+			function next(){
+				window.history.forward();
+			}
+			
+			function previous(){
+				window.history.back();
+			}
+		</script>
+	</body>
+</html>

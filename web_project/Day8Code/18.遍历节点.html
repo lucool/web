@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		
+		<!--title:悬浮标题     alt：替换标题-->
+		<img src="img/bg.jpg" width="100px" height="100px" />
+		<img src="img/bg.jpg" width="100px" height="100px"/>
+		<img src="img/bg.jpg" width="100px" height="100px"/>
+		<img src="img/bg.jpg" width="100px" height="100px"/>
+		<img src="img/bg.jpg" width="100px" height="100px"/>
+		<img src="img/bg.jpg" width="100px" height="100px"/>
+		<img src="img/bg.jpg" width="100px" height="100px"/>
+		
+		<script>
+			/*
+			 * each(callback):callback是一个回调函数，该函数可以接受一个形参index，这个形参是遍历元素的下标
+			 */
+			
+			
+			/*
+			 * css(),类似于js中的style属性，在css中设置的属性都来自与css
+			 * 
+			 * attr()；设置的是html标签自带的属性
+			 */
+			
+			//index只是一个变量名，可以是任意的标识符，从0开始
+//			$("img").each(function(index){
+//				
+//				$(this).attr("title","第" + index + "张图片");
+//				
+//			})
+
+
+			for(var i = 0;i < $("img").length;i++){
+				console.log($("img")[i]);
+			}
+			
+			
+			
+		</script>
+	</body>
+</html>

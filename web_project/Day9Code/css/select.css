@@ -1,0 +1,109 @@
+*{
+	padding: 0;
+	margin: 0;
+	font-size: 12px;
+}
+
+/*设置列表*/
+ul{
+	list-style: none;
+}
+
+/*整体设置*/
+#box{
+	width: 620px;
+	
+	margin: 50px auto;
+}
+
+/*设置导航*/
+#nav{
+	background-color: #eee;
+	
+	/*处理移出的部分*/
+	overflow: hidden;
+}
+
+/*设置导航中的li*/
+#nav li{
+	/*横向排列*/
+	float: left;
+	
+	width: 100px;
+	height: 30px;
+	
+	/*居中显示*/
+	text-align: center;
+	line-height: 30px;	
+	
+	/*设置边框*/
+	border: 1px solid #eee;
+	border-top-width:2px;
+	border-bottom-color: #ccc;
+	
+	/*设置游标的样式*/
+	cursor: pointer;
+}
+
+/*设置导航的选中样式*/
+#nav .active{
+	border-left-color: #ccc;
+	border-right-color: #ccc;
+	border-top-color: blue;
+	border-bottom-color: #fff;
+	background-color: #fff;
+}
+
+/*设置正文部分*/
+#panel .panel{
+	/*隐藏*/
+	display: none;
+	margin:10px 0px;
+	
+	overflow: hidden;
+}
+
+/*单独设置被选中的正文*/
+#panel .active{
+	display: block;
+}
+
+/*设置图片*/
+#panel .panel img{
+	float: left;
+}
+
+/*设置标题*/
+#panel .panel .title{
+	margin-left:280px;
+	
+	border-bottom: 1px solid #ccc;
+	
+	padding-bottom: 15px;
+}
+
+#panel .panel .list{
+	margin-left:280px;
+}
+
+/*设置文字的列表部分*/
+#panel .panel .list li{
+	float: left;
+	
+	line-height: 25px;
+	
+	margin-top: 10px;	
+	
+	margin-right: 40px;
+	
+	text-decoration: underline;
+}
+
+
+
+
+
+
+
+
+

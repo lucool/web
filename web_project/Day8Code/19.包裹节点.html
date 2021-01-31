@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		<div class="container">
+		  <div class="inner">Hello</div>
+		  <div class="inner">Goodbye</div>
+		</div>
+		
+		<script>
+			/*
+			 * 子标签对象.wrap(父标签对象)  ：给指定标签添加父标签
+			 * 
+			 * 子标签对象.unwrap()：移除指定标签的父标签
+			 * 
+			 * 子标签对象.wrapall(父标签对象)
+			 * 
+			 * 
+			 * 父标签对象.wrapinner(子标签对象)
+			 * 
+			 */
+			$(".inner").wrap("<div></div>");
+			/*
+			 * <div class="container">
+			 * 	  <div>
+		  			<div class="inner">Hello</div>
+		  		  </div>
+		  		  <div>
+		  			<div class="inner">Goodbye</div>
+		  		  </div>
+			 </div>
+			 */
+			
+		</script>
+	</body>
+</html>

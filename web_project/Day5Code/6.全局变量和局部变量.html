@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			
+			//全局变量：在当前html文件中的任何script标签中都可以访问
+			num = 999;
+			
+//			alert("第一个script中的num=" + num);
+			
+			
+			function show(){
+				//注意：如果一个变量定义在函数的内部，没有添加var关键字，则仍然属于全局
+				n1 = 10;
+//				alert("show内部的n1=" + n1);
+				
+//				alert("show内部的num=" + num);
+
+				//局部变量：var  变量  = 值，该变量只能在函数内部访问，一旦该函数执行完毕，该变量会被销毁
+				var score = 666;
+				alert("show内部的score=" + score);
+				
+			}
+			
+			show();
+			
+			//document.write("第一个script中的n1=" + n1);
+			
+			//局部变量访问不到
+			//alert("第一个script中score=" + score);
+			
+			
+			if(1){
+				n2 = 45;
+			}
+		
+		</script>
+		<script>
+//			document.write("第二个script中的n1=" + n1);
+//			
+//			document.write("第二个script中的num=" + num);
+		</script>
+	</body>
+</html>

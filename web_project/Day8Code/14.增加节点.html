@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		
+		<p>I would like to say: </p>
+		
+		<script>
+			//1.在指定标签的内部添加【父子标签】
+			/*
+			 * 1.1在末尾追加
+			 * 父标签对象.append(子标签对象)
+			 * 
+			 * 子标签对象.appendTo(父标签对象)
+			 */
+			
+			//$("p").append("<b>Hello</b>");   //<p>I would like to say:<b>Hello</b> </p>
+			
+			$("<b>Hello</b>").appendTo("p");  //<p>I would like to say:<b>Hello</b> </p>
+			
+			
+			/*
+			 * 1.2添加前置内容
+			 * 父标签对象.prepend(子标签对象)
+			 * 
+			 * 子标签对象.prependTo(父标签对象)
+			 */
+			
+			$("p").prepend("<b>Hello</b>");   //<p><b>Hello</b>I would like to say: </p>
+			
+			$("<b>Hello</b>").prependTo("p");  //<p><b>Hello</b>I would like to say: </p>
+			
+			
+			//2.在指定标签的外部插入【兄弟标签】
+			/*
+			 * 2.1 后面
+			 * 
+			 * 标签1.after(标签2):在标签1的后面插入一个兄弟标签2
+			 *标签2.insertAfter(标签1)：在标签1的后面插入一个兄弟标签2
+			 */
+			$("p").after("<b>Hello</b>");   //<p>I would like to say: </p><b>Hello</b>
+			$("<b>Hello</b>").insertAfter("p");     // <p>I would like to say: </p><b>Hello</b>
+			
+			
+			/*
+			 * 2.2前面
+			 * 
+			 *  标签1.before(标签2)：在标签1的前面插入一个兄弟标签2
+			 * 标签2.insertBefore(标签一)
+			 */
+			$("p").before("<b>Hello</b>");   //<b>Hello</b><p>I would like to say: </p>
+			$("p").insertBefore("<b>Hello</b>");   //<b>Hello</b><p>I would like to say: </p>
+			
+		</script>
+	</body>
+</html>

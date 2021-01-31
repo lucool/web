@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			//1.获取数组的长度
+			var arr1 = [43,53,5];
+			console.log(arr1.length);
+			
+			//2.拼接
+			//注意:拼接之后生成了一个新的数组
+			var arr1 = [1,2,3];
+			var arr2 = [4,5,6];
+			
+			arr1.concat(arr2);
+			console.log(arr1);
+			
+			
+			//3.合并
+			//注意：通过split函数将字符串---》数组，通过join将数组-----》字符串
+			var arr3 = ['a','b','c'];
+			console.log(arr3.join("-"));
+			
+			//4.向数组的末尾添加元素：push
+			//注意：js中的数组类似于Python中的列表。可以进行增加和删除元素的操作
+			var a1 = new Array(3);
+			a1[0] = 'tom';
+			a1[1] = 'aaa';
+			a1[2] = 'bbb';
+			console.log(a1);
+			console.log(a1.push("bob"));   //向数组中追加一个元素,同时返回新数组的长度
+			console.log(a1);
+			
+			
+			//5.向数组的头部插入元素：unshift
+			console.log(a1.unshift("jack"));   //向数组头部插入一个元素,同时返回新数组的长度
+			console.log(a1);
+			
+			//6.删除尾部：pop
+			a1.pop();
+			console.log(a1);
+			
+			
+			//7.删除头部：shift
+			a1.shift();
+			console.log(a1);
+			
+			//8.反转：reverse（）,在数组内部进行反转
+			a1.reverse();
+			console.log(a1);
+			
+			//9.切片:slice,包头不包尾，默认步长为1，不能更改
+			var a2 = [43,54,5,45,4,5,4,67];
+			var a3 = a2.slice(0,6);
+			console.log(a3);
+			
+		</script>
+	</body>
+</html>

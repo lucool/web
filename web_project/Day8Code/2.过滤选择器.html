@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		
+		<!--1-->
+		<p class="p1">aaaaaaa</p>
+		<p class="p1">bbbjsbbb</p>
+		<p class="p1">cccccc</p>
+		<p class="p1">djsddddd</p>
+		<p class="p2">dddddd</p>
+		<p id="p1"></p>
+		
+		<h1>hello</h1>
+		<h4>hello</h4>
+		
+		<!--2-->
+		<table>
+			<tr>
+				<td>
+					<p id="pp">good good good</p>
+				</td>
+				
+			</tr>
+			<tr>
+				<td>
+					<p>day day day</p>
+				</td>
+			</tr>
+		</table>
+		
+		<!--3-->
+		<input type="text" value="111" />
+		
+		<!--隐藏域-->
+		<input type="hidden" />
+		
+		<!--设置元素隐藏-->
+		<input type="text" value="2222" style="display: none;" />
+		
+		
+		<!--4-->
+		<form>
+			<!--不可用按钮-->
+			<input type="button" value="点击" disabled="disabled" />
+			
+			<input type="checkbox" checked="checked" />111
+			<input type="checkbox" checked="checked"/>222
+			<input type="checkbox" checked="checked"/>333
+			
+			<select name="" id="">
+				<option value=""></option>
+				<option value="" selected="selected"></option>
+				<option value=""></option>
+			</select>
+		</form>
+		
+		<!--5-->
+		<ul>
+			<li>aaa</li>
+			<li>bbb</li>
+			<li>ccc</li>
+			<li>dddd</li>
+			<li>eee</li>
+			<li>ffff</li>
+		</ul>
+		
+		<script>
+			//1.简单过滤器
+			/*//1.1   :first:只匹配第一个元素        				******
+			var $jqObj = $(".p1:first").html("first");
+			
+			//1.2   :last:只匹配最后一个元素  					******
+			var $jqObj = $(".p1:last").html("last");
+			
+			
+			//注意：索引从0开始
+			//1.3   :even:匹配所有索引值为偶数的元素
+			var $jqObj = $(".p1:even").html("even");
+			
+			
+			//1.4  :odd:匹配所有索引值为奇数的元素
+			//var $jqObj = $(".p1:odd").html("odd");
+			
+			//1.5  :eq(index):匹配指定索引值的元素        			******
+			var $jqObj = $(".p1:eq(2)").html("equal");
+			
+			//1.6  :gt(index):匹配所有索引值大于指定值的元素
+			var $jqObj = $(".p1:gt(1)").html("gtgt");
+			
+			//1.7  :lt(index):匹配所有索引值小于于指定值的元素
+			var $jqObj = $(".p1:lt(1)").html("ltlt");
+			
+			
+			//1.8  :header:匹配所有的标题标签
+			var $jqObj = $(":header").html("标题标题");
+			
+			
+			//1.9  :not(selector):匹配除了selector能够匹配到的元素,表示否定
+			var $jqObj = $("p:not(.p1)").html("notnot");
+			
+			//1.10  :animated:匹配所有正在执行动画的元素
+			var $jqObj = $(":animated");*/
+			
+			
+			//2.内容过滤器
+			//2.1 :contains(xx):匹配包含指定文本的元素     			     ******
+			//对象.html(xxx):给指定的标签设置内容，设置所有匹配到的标签
+			var $jqObj = $("p:contains('js')").html("javascript");
+			
+			//对象.html():获取，只获取第一个匹配到的元素
+			//console.log($("p:contains('js')").html());
+			
+			
+			//2.2:empty:匹配文本为空的元素
+			console.log($("p:empty"));
+			
+			
+			//2.3:parent():匹配含有子元素或者文本的元素
+			console.log($("p:parent"));
+			
+			//2.4:has(selector):匹配包含指定选择器所匹配元素的元素      		******
+			console.log($("td:has(#pp)"));
+			console.log($("td:has(p)"));
+			
+			
+			//3.可见性过滤器
+			//3.1 :hidden :匹配不可见的元素
+			console.log($("input:hidden"));
+			
+			
+			//3.2 :visible :匹配可见的元素
+			console.log($("input:visible"));
+			
+			
+			//4.表单属性的过滤器
+			//4.1 :checked 匹配所有被选中的元素【单项和多选】
+			console.log($("input:checked:eq(0)"));
+			console.log($("input:checked:eq(1)"));
+			console.log($("input:checked:eq(2)"));
+			
+			//4.2 :disabled  匹配所有不可用的元素
+			//4.3 :enabled  匹配所有可用的元素，所有的标签默认可用的
+			console.log($("input:disabled"));
+			
+			//4.4:selected 
+			console.log($("select option:selected"));
+			
+			//5.子元素过滤器
+			//5.1 :first-child 匹配第一个子元素				******
+			console.log($("ul li:first-child"));  //侧重点：子标签
+			var $jqObj = $(".p1:first");   //侧重点：标签本身
+			
+			
+			//5.2 :last-child  匹配最后一个子元素				******
+			console.log($("ul li:last-child"));
+			
+			
+			//5.3 :nth-child(index),匹配第index个子标签，index从1开始  ,顺序查找        ******
+			// ：nth-last-child(index)倒序查找
+			console.log($("ul li:nth-child(2)"));
+			
+			
+			//5.4 :only-child  如果某个元素是它的父元素的唯一的子元素，那么则会被匹配
+			console.log($("ul li:only-child"));
+			
+			
+			//过滤选择器的特点：可以根据具体的需求叠加不同的过滤条件
+			
+		</script>
+	</body>
+</html>

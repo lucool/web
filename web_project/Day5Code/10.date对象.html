@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<script>
+			/*
+			 * 月份：0~11，所以取得值+1才是当前月份
+			 * 星期：0~6，0表示星期日
+			 */
+			
+			
+			var d = new Date();
+			document.write(d);
+			document.write("<br />");
+			document.write(typeof d);
+			document.write("<br />");
+			
+			//获取日期和时间的变量:get函数
+			document.write(d.getDate());    //日期
+			document.write("<br />");
+			document.write(d.getTime());    //时间戳
+			document.write("<br />");
+			document.write(d.getHours());
+			document.write("<br />");
+			document.write(d.getFullYear());
+			document.write("<br />");
+			document.write(d.getMinutes());
+			document.write("<br />");
+			document.write(d.getSeconds());
+			document.write("<br />");
+			
+			document.write(d.getMonth());
+			document.write("<br />");
+			document.write(d.getMilliseconds());
+			document.write("<br />");
+			
+			
+			//设置：set
+			//注意:一旦超过指定的数据,则会在给上一级数据+1
+			d.setMonth(15);
+			document.write(d);
+			document.write("<br />");
+			
+			d.setHours(30)
+			
+			
+			//获取日期字符串
+			document.write(d.toLocaleString());   //日期+时间
+			document.write("<br />");
+			document.write(d.toLocaleDateString());  //日期
+			document.write("<br />");
+			document.write(d.toLocaleTimeString());  //时间
+			document.write("<br />");
+			
+			
+			//parse表示解析，可以直接获取一个指定时间的时间戳
+			document.write(Date.parse("2017-10-1"));
+			document.write("<br />");
+			document.write(Date.parse("2019-9-6"));
+			document.write("<br />");
+			
+			//date对象之间的运算
+			var date1 = new Date("2017-10-1 10:10:10");
+			var date2 = new Date("2017-10-3 10:10:10");
+			
+			//两个date对象之间进行减法运算，得到结果为时间差的毫秒数
+			document.write(date2 - date1);
+			document.write("<br />");
+			
+			//拼接
+			document.write(date1 + date2);
+			
+		</script>
+	</body>
+</html>

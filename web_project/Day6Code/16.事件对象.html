@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			#box{
+				width: 100px;
+				height: 100px;
+				background-color: orange;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="box"></div>
+		
+		<script>
+			//普通无参函数
+			function show(){
+				//arguments是一个参数的容器，其中的元素是当前函数的参数
+				alert(arguments.length);   //0
+			}
+			show()
+			
+			
+			//事件的无参函数
+			var divObj = document.getElementById("box");
+			
+			
+			//一旦给一个标签绑定一个事件，该事件指向的函数中存在一个默认参数，该参数被称为事件对象。
+			//如果要将该参数显式的写出来，可以是任意的标识符，一般使用event
+			divObj.onclick = function(event){
+				//alert(arguments.length); 
+				//alert(arguments[0]);  //[object MouseEvent]
+				
+				//对事件对象作出处理：兼容不同的浏览器
+				//非IE   ||   IE
+				var e = event || window.event;	
+			}
+			
+		</script>
+	</body>
+</html>

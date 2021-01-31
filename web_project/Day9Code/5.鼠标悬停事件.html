@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<title></title>
+		<style>
+			div{
+				width: 200px;
+				height: 200px;
+				background-color: purple;
+			}
+		</style>
+		<script type="text/javascript" src="js/jquery-3.3.1.js"></script>
+	</head>
+	<body>
+		
+		<div></div>
+		
+		<script>
+			/*
+			 * 作用：模仿鼠标的操作，当鼠标移动到一个对象上的时候，触发一定的操作，当移出该对象的时候，触发另一种操作
+			 * 
+			 * hover(over,out)，over和out表示函数
+			 * 	over:用于指定当鼠标移动到元素上方的时候需要触发的函数
+			 * 	out:用于指定当鼠标移出元素上方的时候需要触发的函数
+			 * 
+			 * 
+			 * 注意：类似于css的伪类选择器的用法
+			 */
+			
+			$(function(){
+				
+				$("div").hover(function(){
+					//console.log("鼠标移入")
+					
+					$(this).css("background-color","red");
+					
+				},function(){
+					//console.log("鼠标移出~~~~")
+					
+					$(this).css("background-color","cyan");
+				});
+				
+			});
+			
+		</script>
+		
+	</body>
+</html>

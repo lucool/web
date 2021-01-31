@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<ul id="ul">
+			<li>西施</li>
+			<li id="li2">貂蝉</li>     
+			<li>杨玉环</li>
+			<li>王昭君</li>
+			<li>凤姐</li>
+		</ul>
+		
+		
+		<button onclick="replace();">替换子节点</button>
+		
+		<script>
+			/*
+			 * 替换子节点
+			 * replaceChild(new,old)
+			 * 
+			 * 注意：必须通过父节点操作
+			 */
+			
+			//需求：将貂蝉的li替换为张三的li
+			function replace(){
+				
+				//1.获取节点
+				//获取父节点
+				var ulEle = document.getElementById("ul");
+				//获取需要被替换的节点
+				var oldEle = document.getElementById("li2");
+				
+				
+				//2.创建节点
+				//创建文本节点
+				var textNode = document.createTextNode("张三");
+				//创建li节点
+				var liEle = document.createElement("li");
+				
+				//3.追加子节点
+				liEle.appendChild(textNode);
+				
+				//4.替换子节点
+				//父节点对象.replaceChild(新的节点对象，旧的节点对象)
+				ulEle.replaceChild(liEle,oldEle);	
+			}
+		</script>
+		
+	</body>
+</html>

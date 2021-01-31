@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+	</head>
+	<body>
+		<span id="spanid">hello</span>
+		<div id="box"></div>
+		<script>
+			/*
+			 * innerHTML
+			 * 使用最多，
+			 * 
+			 * 获取节点的文本值,同时也可以设置节点的文本值
+			 * 
+			 * 注意：不但可以识别纯文本，也可以识别html文本
+			 */
+			
+			//1.获取标签的文本值
+//			var span = document.getElementById("spanid");
+//			document.write(span.innerHTML);
+
+
+			//2.给标签对象设置文本
+			//2.1设置纯文本
+			//获取div的对象
+			var div = document.getElementById("box");
+			//方式一
+			//div.appendChild(document.createTextNode("abchu"));
+			//方式二
+			//div.innerHTML = "abcdef";
+			
+			
+			//2.2设置html内容
+			//方式一：
+//			var h1Obj = document.createElement("h1");
+//			var hText = document.createTextNode("hello");
+//			h1Obj.appendChild(hText);
+//			div.appendChild(h1Obj);
+		
+			//方式二
+			//div.innerHTML = "<h1>hahhaahh</h1>";
+			
+			
+			//注意：innerHTML可以识别字符串中的html标签，同时如果html标签有缺失，会自动补充【尽力解析】
+			
+			div.innerHTML = "<table border='1' bordercolor='red'><tr><td>111</td><td>111</td></tr><tr><td>222</td><td>222</td></tr></table>"
+			
+		</script>
+		
+	</body>
+</html>

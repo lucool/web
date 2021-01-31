@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style>
+			body{
+				background-color:blue;
+			}
+		</style>
+	</head>
+	<body>
+		<button onclick="func2();">跳转到绿色页面</button>
+		<button onclick="previous();">上一页</button>
+		<button onclick="next();">下一页</button>
+		
+		
+		<script>
+			function func2(){
+				window.location.assign("greenWindow.html");
+				
+			}
+			
+			function next(){
+				window.history.forward();
+			}
+			
+			function previous(){
+				window.history.back();
+			}
+		</script>
+	</body>
+</html>
